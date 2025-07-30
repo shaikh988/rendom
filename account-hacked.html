@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Hacked</title>
+    <style>
+        body {
+            background: repeating-linear-gradient(135deg, #111 0 40px, #2a0000 40px 80px, #111 80px 120px);
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .warning-box {
+            background: repeating-linear-gradient(120deg, #2a0000 0 30px, #000 30px 60px);
+            border: 4px solid #ff0000;
+            border-radius: 20px;
+            padding: 40px 60px;
+            box-shadow: 0 0 40px 10px #ff0000cc, 0 8px 32px rgba(0,0,0,0.7);
+            text-align: center;
+            max-width: 500px;
+            position: relative;
+            z-index: 2;
+            animation: pulsebox 1.2s infinite alternate;
+        }
+        @keyframes pulsebox {
+            0% { box-shadow: 0 0 40px 10px #ff0000cc, 0 8px 32px rgba(0,0,0,0.7); }
+            100% { box-shadow: 0 0 80px 20px #ff0000ee, 0 8px 32px rgba(0,0,0,0.7); }
+        }
+        .warning-box h1 {
+            color: #ff0000;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .warning-box p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        .skull {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            animation: shake 0.5s infinite alternate, redglow 1.2s infinite alternate;
+            filter: drop-shadow(0 0 10px #ff0000) drop-shadow(0 0 30px #ff0000);
+        }
+        @keyframes shake {
+            0% { transform: rotate(-8deg) scale(1.1); }
+            100% { transform: rotate(8deg) scale(1.2); }
+        }
+        @keyframes redglow {
+            0% { filter: drop-shadow(0 0 10px #ff0000) drop-shadow(0 0 30px #ff0000); }
+            100% { filter: drop-shadow(0 0 30px #ff0000) drop-shadow(0 0 60px #ff0000); }
+        }
+        .btn {
+            background: repeating-linear-gradient(90deg, #ff0000 0 20px, #b30000 20px 40px);
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 24px #ff0000cc, 0 0 10px #fff2;
+            transition: background 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px #fff, 0 0 2px #ff0000;
+        }
+        .btn:hover {
+            background: #000;
+            color: #ff0000;
+            box-shadow: 0 0 40px #ff0000, 0 0 20px #fff2;
+            border-color: #ff0000;
+        }
+        /* Flickering red warning bar */
+        .flicker-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 18px;
+            background: repeating-linear-gradient(90deg, #ff0000 0 30px, #000 30px 60px);
+            z-index: 9999;
+            animation: flicker 0.12s infinite alternate;
+            box-shadow: 0 0 20px #ff0000cc;
+        }
+        @keyframes flicker {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        /* Red scanline overlay */
+        .scanlines {
+            pointer-events: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 10000;
+            background: repeating-linear-gradient(180deg, transparent 0 6px, #ff000033 6px 8px);
+            mix-blend-mode: lighten;
+        }
+    </style>
+</head>
+<body>
+    <div class="flicker-bar"></div>
+    <div class="warning-box">
+        <div class="skull">☠️☠️☠️</div>
+        <h1>Account Hacked!</h1>
+        <p style="color:#ff0000; font-size:1.4rem; text-shadow:0 0 10px #ff0000,0 0 2px #fff;">
+            <b>WARNING:</b> Your account is now <span style="color:#0f0;font-weight:bold;">hacked</span>.<br>
+            All your data is compromised.<br>
+            <span style="color:#fff; background:#ff0000; padding:2px 8px; border-radius:6px;">Contact support immediately!</span>
+        </p>
+        <button class="btn" onclick="alert('This is a demo message. No real hack occurred.')">What should I do?</button>
+    </div>
+    <div class="scanlines"></div>
+    <audio src="https://cdn.pixabay.com/audio/2022/10/16/audio_12b6b1e7e2.mp3" autoplay loop></audio>
+</body>
+</html>
